@@ -38,7 +38,7 @@
 
 .colaborador .deletar {
     position: absolute;
-    right: -10px;
-    top: -10px;
+    right: 2px;
+    top: 2px;
     cursor: pointer;
 }

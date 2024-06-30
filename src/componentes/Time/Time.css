@@ -1,6 +1,10 @@
 .time {
     text-align: center;
     padding: 32px;
+    background-image: url('../../../public/imagens/bg_time.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .time h3 {
