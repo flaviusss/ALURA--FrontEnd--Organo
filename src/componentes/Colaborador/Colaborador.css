@@ -40,5 +40,12 @@
     position: absolute;
     right: 2px;
     top: 2px;
+}
+
+.colaborador .favoritar {
+    margin-top: 20px;
+}
+
+.colaborador .fav-icon {
     cursor: pointer;
 }

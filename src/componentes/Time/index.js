@@ -13,13 +13,15 @@ const Time = props => {
             <div className="colaboradores">
                 {props.colaboradores.map((colaborador, i) => 
                     <Colaborador
-                    corDeFundo={props.cor}
-                    key={i}
-                    id={colaborador.id}
-                    nome={colaborador.nome}
-                    cargo={colaborador.cargo}
-                    imagem={colaborador.imagem}
-                    aoDeletar={props.aoDeletar}
+                        corDeFundo={props.cor}
+                        key={i}
+                        id={colaborador.id}
+                        favorito={colaborador.favorito}
+                        nome={colaborador.nome}
+                        cargo={colaborador.cargo}
+                        imagem={colaborador.imagem}
+                        aoDeletar={props.aoDeletar}
+                        aoFavoritar={props.aoFavoritar}
                      />)}
             </div>
         </section>
