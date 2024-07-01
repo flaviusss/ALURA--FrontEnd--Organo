@@ -6,16 +6,19 @@ import Botao from '../Botao';
 import { v4 as uuidv4 } from 'uuid';
 
 const Formulario = props => {
-    const [id, setId] = useState('')
+    let id = ''
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
 
+    const [nomeTime, setNomeTime] = useState('')
+    const [corTime, setCorTime] = useState('')
+
     const aoSalvar = (e) => {
         e.preventDefault()
 
-        setId(uuidv4())
+        id = uuidv4()
 
         props.aoColaboradorCadastrado({
             id,
@@ -25,7 +28,6 @@ const Formulario = props => {
             time
         })
 
-        setId('')
         setNome('')
         setCargo('')
         setImagem('')
@@ -60,6 +62,27 @@ const Formulario = props => {
                     aoAlterado={valor => setTime(valor)} />
                 <Botao>
                     Criar Card
+                </Botao>
+            </form>
+            <form onSubmit={(e) => {
+                e.preventDefault()
+                props.cadastrarTime({ nome: nomeTime, cor: corTime })
+            }}>
+                <h2>Preencha os dados para criar um novo time.</h2>
+                <CampoTexto
+                    obrigatorio
+                    label="Nome"
+                    placeholder="Digite o nome do time"
+                    valor={nomeTime}
+                    aoAlterado={valor => setNomeTime(valor)} />
+                <CampoTexto
+                    obrigatorio
+                    label="Cor"
+                    placeholder="Digite a cor do time"
+                    valor={corTime}
+                    aoAlterado={valor => setCorTime(valor)} />
+                <Botao>
+                    Criar um novo time
                 </Botao>
             </form>
         </section>
