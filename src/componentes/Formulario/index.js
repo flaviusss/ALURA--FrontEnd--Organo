@@ -3,8 +3,10 @@ import './Formulario.css'
 import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
+import { v4 as uuidv4 } from 'uuid';
 
 const Formulario = props => {
+    const [id, setId] = useState('')
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
@@ -12,13 +14,18 @@ const Formulario = props => {
 
     const aoSalvar = (e) => {
         e.preventDefault()
+
+        setId(uuidv4())
+
         props.aoColaboradorCadastrado({
+            id,
             nome,
             cargo,
             imagem,
             time
         })
 
+        setId('')
         setNome('')
         setCargo('')
         setImagem('')
